@@ -2,13 +2,22 @@ const initialState = {
   allData: null,
   loading: true,
   error: null,
+  currentPlayingArtist: { name: "Ozzy" },
   currentViewingAlbum: [],
-  currentPlayingAlbum: [],
-  currentSong: 0,
+  currentPlayingAlbum: {
+    title: "DSDSD",
+    artWork:
+      "https://res.cloudinary.com/rjsmedia/image/upload/v1640009429/SONG%20ART/PINK_FLOyD_DARK_SIDE_OF_THE_MOON_r0abyn.jpg",
+  },
+  currentPlayingSong: { title: "crazy train" },
   repeat: false,
   random: false,
   playing: false,
   audio: null,
+  selectedSong: {},
+  selectedPlaylist: [],
+  playPrevTrack: false,
+  playNextTrack: false,
 };
 
 const reducer = (state, action) => {

@@ -1,11 +1,15 @@
+import { useEffect } from "react";
 import { useAppContext } from "../context/appContext";
-import AudioElement from "./AudioElement";
+// import AudioElement from "./AudioElement";
 
 const FooterBar = () => {
-  // FROM CONTEXT ================
   const { currentPlayingAlbum, currentPlayingArtist, currentPlayingSong } =
     useAppContext();
 
+  useEffect(() => {
+    console.log(currentPlayingAlbum, "IN");
+  }, [currentPlayingAlbum]);
+  console.log(currentPlayingSong, "CURR");
   return (
     <>
       <div className="now-playing-container">
@@ -47,24 +51,31 @@ const FooterBar = () => {
               </div>
             </div>
             <div className="progress-bar-container">
-              <span className="progress-time current">0:00</span>
+              <span className="progress-time current">PRogress</span>
               <div className="progress-bar">
                 <input
                   type="range"
                   className="progress-range"
                   min="0"
                   max="100"
+                  value="0"
                   step="1"
                 ></input>
                 <div className="progress-bar-track"></div>
               </div>
-              <span className="progress-time remaining"></span>
+              <span className="progress-time remaining">0:00</span>
             </div>
           </div>
           <div className="now-playing-center">
             <div className="volume-container">
               <div className="btn-player-controls">
-                <AudioElement />
+                {/* <AudioElement /> */}
+                <>{/* <AudioElement /> */}</>
+                {/* <AudioElement
+                  getCurrentTrackLength={getCurrentTrackLength}
+                  isLooping={isLooping}
+                  getTimeUpdate={getTimeUpdate}
+                /> */}
                 <button className="volume-up">
                   <i className="fas fa-volume-up"></i>
                 </button>
@@ -74,6 +85,7 @@ const FooterBar = () => {
               </div>
               <div className="volume-bar">
                 <input
+                  value="0"
                   type="range"
                   className="progress-range"
                   min="0"

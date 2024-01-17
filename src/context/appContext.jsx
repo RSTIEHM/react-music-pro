@@ -1,17 +1,15 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-import  { createContext, useContext, useReducer, useEffect } from "react";
+import { createContext, useContext, useReducer, useEffect } from "react";
 import { getAllData } from "../hooks/getAllData";
-
-
 
 const AppContext = createContext();
 
 function getAllBySongId(id, songs, albums, artists) {
-  const song = songs.find((song) => song.id === id)
-  const album = albums.find((album) => song.albumID === album.id)
-  const artist = artists.find((artist) => artist.id === album.artistID)
-  return {song, album, artist}
+  const song = songs.find((song) => song.id === id);
+  const album = albums.find((album) => song.albumID === album.id);
+  const artist = artists.find((artist) => artist.id === album.artistID);
+  return { song, album, artist };
 }
 
 const initialState = {
@@ -21,15 +19,30 @@ const initialState = {
   currentViewingAlbum: {},
   currentPlayingAlbum: {},
   currentPlayingArtist: {},
-  currentPlayingSong: 0,
+  currentPlayingSong: {},
   repeat: false,
   random: false,
   playing: false,
   audio: null,
 };
 
+//   songs,
+//   albums,
+//   artists,
+//   selectedSong,
+//   selectedArtist,
+//   selectedAlbum,
+//   selectedPlaylist,
+//   selectedTrackIndex,
+//   isPlaying,
+//   playTrack,
+//   pauseTrack,
+//   playPrevTrack,
+//   playNextTrack,
+//   getTrack;
+
 const reducer = (state, action) => {
-  let selectedSong
+  let selectedSong;
   switch (action.type) {
     case "FETCH_SUCCESS":
       return {
@@ -49,7 +62,12 @@ const reducer = (state, action) => {
       };
     case "PLAY_TRACK":
       console.log(action.payload, "PAYLOAD");
-      selectedSong = getAllBySongId(action.payload, state.allData.songs, state.allData.albums, state.allData.artists)
+      selectedSong = getAllBySongId(
+        action.payload,
+        state.allData.songs,
+        state.allData.albums,
+        state.allData.artists
+      );
       console.log(state);
       return {
         ...state,
@@ -64,16 +82,15 @@ const reducer = (state, action) => {
 };
 
 export const AppProvider = ({ children }) => {
-  
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await getAllData();
-        dispatch({type: "FETCH_SUCCESS", payload: data});
+        dispatch({ type: "FETCH_SUCCESS", payload: data });
       } catch (error) {
-        dispatch({type: "FETCH_ERROR", payload: error.message});
+        dispatch({ type: "FETCH_ERROR", payload: error.message });
       }
     };
     fetchData();
@@ -91,5 +108,3 @@ export const AppProvider = ({ children }) => {
 export const useAppContext = () => {
   return useContext(AppContext);
 };
-
-
