@@ -1,0 +1,34 @@
+id,title,artist,album,genre,duration,path,albumOrder,plays
+1,How Deep Is Your Love?,9,4,8,3:59,https://res.cloudinary.com/rjsmedia/video/upload/v1640012454/SONG%20ART/Bee_Gees_How_Deep_Is_Your_love_jqqtx7.mp4,2,23
+2,Stayin' Alive,9,4,8,4:09,https://res.cloudinary.com/rjsmedia/video/upload/v1640012454/SONG%20ART/Bee_Gees_Stayin_Alive_xhuwvs.mp4,1,78
+3,Killing Yourself To Live,5,2,2,5:42,https://res.cloudinary.com/rjsmedia/video/upload/v1640012454/SONG%20ART/Black_Sabbath_Killing_Yourself_To_Live_ewwhks.m4a,2,21
+4,Sabbath Bloody Sabbath,5,2,2,5:50,https://res.cloudinary.com/rjsmedia/video/upload/v1640012454/SONG%20ART/Black_Sabbath_Sabbath_Bloody__Sabbath_rcx6mf.mp4,1,666
+5,Breathe,6,5,9,4:02,https://res.cloudinary.com/rjsmedia/video/upload/v1640012453/SONG%20ART/Pink_Floyd_Breathe_vlgrgw.mp4,1,56
+6,On The Run,6,5,9,3:45,https://res.cloudinary.com/rjsmedia/video/upload/v1640012452/SONG%20ART/Pink_Floyd_On_The_Run_zfkazk.m4a,2,56
+7,So What,1,1,1,9:23,https://res.cloudinary.com/rjsmedia/video/upload/v1640025043/SONG%20ART/Miles_Davis_So_What_pcqvyj.m4a,1,345
+8,Blue In Green,1,1,1,5:38,https://res.cloudinary.com/rjsmedia/video/upload/v1640025406/SONG%20ART/Miles_Davis_Blue_In_Green_s0lmqm.m4a,2,345
+9,Blue Eyes Crying In The Rain,11,6,6,2:21,https://res.cloudinary.com/rjsmedia/video/upload/v1640025508/SONG%20ART/Willie_Nelson_Blue_Eyes_Crying_lptap5.m4a,1,98
+10,Railroad Lady,11,6,6,2:40,https://res.cloudinary.com/rjsmedia/video/upload/v1640025586/SONG%20ART/Willie_Nelson_Railroad_Lady_qvfzod.m4a,2,23
+11,Black Sabbath,5,7,2,6:20,https://res.cloudinary.com/rjsmedia/video/upload/v1640031093/SONG%20ART/Black_Sabbath_Black__Sabbath_qengoe.m4a,1,666
+12,The Wizard,5,7,2,4:27,https://res.cloudinary.com/rjsmedia/video/upload/v1640031236/SONG%20ART/Black_Sabbath_The_Wizard_eo0yic.m4a,2,666
+15,Hit The Lights,12,8,2,4:19,https://res.cloudinary.com/rjsmedia/video/upload/v1640031661/SONG%20ART/Metallica_Hit_The_Lights_myql9w.m4a,1,23
+16,Motorbreath,12,8,2,3:08,https://res.cloudinary.com/rjsmedia/video/upload/v1640031659/SONG%20ART/Metallica_Motorbreath_zwui83.m4a,2,89
+17,Don't Go,8,3,3,3:06,https://res.cloudinary.com/rjsmedia/video/upload/v1640012451/SONG%20ART/Yaz_Dont_Go_fvbb92.mp4,1,23
+18,Only You,8,3,3,3:15,https://res.cloudinary.com/rjsmedia/video/upload/v1640012452/SONG%20ART/Yaz_Only_You_rwamdw.m4a,2,23
+19,The Girl From Ipanema,13,9,1,5:24,https://res.cloudinary.com/rjsmedia/video/upload/v1640031850/SONG%20ART/Getz_Gilberto__The_Girl_From_Ipanema_y1lwbv.m4a,1,56
+20,Desafinado,13,9,1,4:15,https://res.cloudinary.com/rjsmedia/video/upload/v1640032031/SONG%20ART/Getz_Gilberto__Desafinado_wucoty.m4a,2,453
+21,N.I.B,5,7,2,6:07,https://res.cloudinary.com/rjsmedia/video/upload/v1640375935/SONG%20ART/Black_Sabbath_NIB_luiu4f.m4a,3,12
+22,Sabbra Cadabra,5,2,2,5:58,https://res.cloudinary.com/rjsmedia/video/upload/v1640375936/SONG%20ART/Black_Sabbath_Sabbra_Cadabra_i0nmgr.m4a,3,21
+23,On The Road Again,11,6,6,2:33,https://res.cloudinary.com/rjsmedia/video/upload/v1640366206/SONG%20ART/Willie_Nelson_On_The_Road_Again_i7env8.m4a,3,23
+24,The Four Horsemen,12,8,2,3:08,https://res.cloudinary.com/rjsmedia/video/upload/v1640031659/SONG%20ART/Metallica_Motorbreath_zwui83.m4a,3,89
+25,Freddy The Freeloader,1,1,1,9:47,https://res.cloudinary.com/rjsmedia/video/upload/v1640375934/SONG%20ART/Miles_Davis_Freddie_Freeloader_isjql6.m4a,3,345
+26,Money,6,5,9,6:32,https://res.cloudinary.com/rjsmedia/video/upload/v1640376216/SONG%20ART/PINK_FLOYD_MONEY_jrji0z.mp4,3,56
+27,Midnight,8,3,3,4:20,https://res.cloudinary.com/rjsmedia/video/upload/v1640375932/SONG%20ART/YAZ_MIDNIGHT_d82zvt.m4a,3,23
+28,Iceblink Baby,14,10,3,3:18,https://res.cloudinary.com/rjsmedia/video/upload/v1640912306/SONG%20ART/CT_Iceblink_gkd87d.m4a,3,23
+29,Heaven Or Las Vegas,14,10,3,4:58,https://res.cloudinary.com/rjsmedia/video/upload/v1640912320/SONG%20ART/CT_HEAVEN_i2psej.m4a,3,23
+30,Cherry Coloured Funk,14,10,3,3:12,https://res.cloudinary.com/rjsmedia/video/upload/v1640912320/SONG%20ART/CT_Cherry_oiwd6h.m4a,3,23
+31,Exactly Where I'm At,15,11,3,4:31,https://res.cloudinary.com/rjsmedia/video/upload/v1640912310/SONG%20ART/WEEN_Exactly_ebaom1.m4a,3,23
+32,Stay Forever,15,11,3,3:32,https://res.cloudinary.com/rjsmedia/video/upload/v1640912315/SONG%20ART/WEEN_STAY_FORVER_cdfyew.m4a,3,23
+33,Flutes Of Chi,15,11,3,3:30,https://res.cloudinary.com/rjsmedia/video/upload/v1640912316/SONG%20ART/WEEN_Flutes_gbkyjz.m4a,3,23
+34,Move,1,12,3,2:35,https://res.cloudinary.com/rjsmedia/video/upload/v1640912315/SONG%20ART/Miles_Davis_MOVE_pbtgia.m4a,3,23
+35,Boplicity,1,12,3,3:02,https://res.cloudinary.com/rjsmedia/video/upload/v1640912312/SONG%20ART/Miles_Davis_BOB_whpsd0.m4a,3,23
