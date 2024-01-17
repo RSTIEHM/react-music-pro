@@ -67,10 +67,11 @@ const Album = () => {
                 <p>{album.description}</p>
                 <div className="button-container">
                   <button
-                    className="btn play-btn"
+                    disabled={`${playing ? "true" : ""}`}
+                    className={`btn play-btn ${playing ? " btn-trans" : ""}`}
                     onClick={() => handlePlayTrack(songs[0].id)}
                   >
-                    {!playing ? "STOP" : "PLAY"}
+                    PLAY
                   </button>
                   <button className="btn save-btn">Save</button>
                 </div>
@@ -86,7 +87,7 @@ const Album = () => {
                 key={song.title}
                 className="single-album-tracks-container"
               >
-                <div className={`single-album-track selected d`}>
+                <div className={`single-album-track`}>
                   <div className="counter-container">
                     <p className="single-album-track-counter">{i + 1}</p>
                     <i className="fas fa-play icon-play"></i>
