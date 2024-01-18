@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react"
-import MainContent from "../components/MainContent"
-import {useAppContext} from "../context/appContext"
+import { useState, useEffect } from "react";
+import MainContent from "../components/MainContent";
+import { useAppContext } from "../context/appContext";
 import SingleAlbumLink from "../components/SingleAlbumLink";
 import Loader from "../components/Loader";
 // import { Link } from "react-router-dom";
-
 
 const Home = () => {
   const [albums, setAlbums] = useState([]);
@@ -23,24 +22,19 @@ const Home = () => {
 
   if (!albums) {
     return <Loader />;
-  } 
+  }
 
+  return (
+    <MainContent title="Albums">
+      <div className="main">
+        <div className="home home-index">
+          <p>This is a change</p>
+          {albums.length > 0 &&
+            albums.map((album, i) => <SingleAlbumLink key={i} album={album} />)}
+        </div>
+      </div>
+    </MainContent>
+  );
+};
 
-
-
-return (   
-<MainContent title="Albums">
-  <div  className="main">
-    <div className="home home-index">
-      {albums.length > 0 &&
-        albums.map((album, i) => (
-          <SingleAlbumLink key={i} album={album} />
-      ))}
-    </div>
-  </div>
-</MainContent>
-
-)
-}
-
-export default Home
+export default Home;
