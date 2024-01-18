@@ -1,9 +1,13 @@
-import { useEffect, useCallback } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../context/appContext";
 import AudioElement from "./AudioElement";
 
+import { STOP_TRACK } from "../reducers/actionsTypes";
+
 const FooterBar = () => {
+  // const [stop, setStop] = useState(false)
+  // FROM CONTEXT ================
   const {
     currentPlayingAlbum,
     currentPlayingArtist,
@@ -12,13 +16,12 @@ const FooterBar = () => {
     dispatch,
   } = useAppContext();
 
-  const handleStopTrack = useCallback(() => {
-    dispatch({ type: "STOP_TRACK" });
-  }, [dispatch]);
-
   useEffect(() => {
-    handleStopTrack();
-  }, [handleStopTrack]);
+    function runDispatch() {
+      dispatch({ type: STOP_TRACK });
+    }
+    runDispatch();
+  }, [dispatch]);
 
   // console.log(albumSongs, "FOOTER SONGS")
   return (

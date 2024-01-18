@@ -1,18 +1,24 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 
-
 import { createContext, useContext, useReducer, useEffect } from "react";
 import { getAllData } from "../hooks/getAllData";
-import { FETCH_SUCCESS, FETCH_ERROR, PLAY_TRACK, FILTER_ALBUMS, STOP_TRACK, UPDATE_CURRENT_PLAYING_SONG } from "../reducers/actionsTypes"
-
+import {
+  FETCH_SUCCESS,
+  FETCH_ERROR,
+  PLAY_TRACK,
+  FILTER_ALBUMS,
+  STOP_TRACK,
+  UPDATE_CURRENT_PLAYING_SONG,
+} from "../reducers/actionsTypes";
 
 const AppContext = createContext();
 
 function getAllBySongId(id, songs, albums, artists) {
+  // console.log(id, "IN GETALLBY");
   const song = songs.find((song) => song.id === id);
   const album = albums.find((album) => song.albumID === album.id);
-  const albumSongs = songs.filter((song) => song.albumID === album.id)
+  const albumSongs = songs.filter((song) => song.albumID === album.id);
   const artist = artists.find((artist) => artist.id === album.artistID);
   return { song, album, artist, albumSongs };
 }
@@ -29,10 +35,8 @@ const initialState = {
   random: false,
   playing: false,
   audio: null,
-  looping: true
+  looping: true,
 };
-
-
 
 const reducer = (state, action) => {
   let selectedSong;
@@ -54,13 +58,15 @@ const reducer = (state, action) => {
         ...state,
       };
     case PLAY_TRACK:
-      console.log(action.payload)
+      // console.log(action.payload, "IN CASE ACTION");
       selectedSong = getAllBySongId(
         action.payload,
         state.allData.songs,
         state.allData.albums,
         state.allData.artists
       );
+
+      // console.log(selectedSong, "SELECTED SONG");
       return {
         ...state,
         currentPlayingSong: selectedSong.song,
@@ -70,17 +76,17 @@ const reducer = (state, action) => {
         playing: true,
       };
 
-      case UPDATE_CURRENT_PLAYING_SONG: 
-        return {
-          ...state,
-          currentPlayingSong: action.payload
-        }
+    case UPDATE_CURRENT_PLAYING_SONG:
+      return {
+        ...state,
+        currentPlayingSong: action.payload,
+      };
 
-      case STOP_TRACK:
-        return {
-          ...state,
-          playing: false,
-        };
+    case STOP_TRACK:
+      return {
+        ...state,
+        playing: false,
+      };
     default:
       return state;
   }
