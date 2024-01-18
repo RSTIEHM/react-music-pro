@@ -1,15 +1,19 @@
+import {
+  FETCH_SUCCESS,
+  FETCH_ERROR,
+  PLAY_TRACK,
+  FILTER_ALBUMS,
+  STOP_TRACK,
+} from "./actionsTypes";
+
 const initialState = {
   allData: null,
   loading: true,
   error: null,
-  currentPlayingArtist: { name: "Ozzy" },
+  currentPlayingArtist: {},
   currentViewingAlbum: [],
-  currentPlayingAlbum: {
-    title: "DSDSD",
-    artWork:
-      "https://res.cloudinary.com/rjsmedia/image/upload/v1640009429/SONG%20ART/PINK_FLOyD_DARK_SIDE_OF_THE_MOON_r0abyn.jpg",
-  },
-  currentPlayingSong: { title: "crazy train" },
+  currentPlayingAlbum: {},
+  currentPlayingSong: {},
   repeat: false,
   random: false,
   playing: false,
@@ -23,30 +27,37 @@ const initialState = {
 const reducer = (state, action) => {
   let filteredAlbums;
   switch (action.type) {
-    case "FETCH_SUCCESS":
+    case FETCH_SUCCESS:
       return {
         ...state,
         allData: action.payload,
         loading: false,
       };
-    case "FETCH_ERROR":
+    case FETCH_ERROR:
       return {
         ...state,
         error: action.payload,
         loading: false,
       };
-    case "FILTER_ALBUMS":
+    case FILTER_ALBUMS:
       return {
         ...state,
         filteredAlbums,
       };
-    case "PLAY_TRACK":
-      console.log(action.payload, "payload");
+    case PLAY_TRACK:
       return {
         ...state,
         currentSong: action.payload,
-        playing: !state.playing,
+        playing: true,
       };
+    case STOP_TRACK:
+      console.log("IN STOP REDUCER");
+      return {
+        ...state,
+        currentSong: {},
+        playing: false,
+      };
+
     default:
       return state;
   }

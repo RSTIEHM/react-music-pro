@@ -139,6 +139,14 @@ select {
   background-color: var(--clr-black);
 }
 
+.activeBg {
+  color: var(--clr-yellow);
+}
+
+.activeClr {
+  color: var(--clr-yellow);
+}
+
 .side-bar-search {
   transform: translateX(10px);
 }
@@ -1222,4 +1230,12 @@ a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+}
+
+.activeBg {
+  color: var(--clr-yellow);
+}
+
+.activeClr {
+  color: var(--clr-yellow);
 }

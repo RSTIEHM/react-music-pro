@@ -1,27 +1,46 @@
+import {useEffect} from 'react'
+import { Link } from 'react-router-dom';
 import { useAppContext } from "../context/appContext";
 import AudioElement from "./AudioElement";
 
+import {
+  STOP_TRACK,
+} from "../reducers/actionsTypes";
+
 const FooterBar = () => {
+
+  // const [stop, setStop] = useState(false)
   // FROM CONTEXT ================
-  const { currentPlayingAlbum, currentPlayingArtist, currentPlayingSong } =
+  const { currentPlayingAlbum, currentPlayingArtist, currentPlayingSong, playing,  dispatch } =
     useAppContext();
 
+    useEffect(() => {
+      function runDispatch() {
+        dispatch({ type:STOP_TRACK });
+      }
+      runDispatch()
+    },[dispatch])
+
+    console.log("log msg")
+    // console.log(albumSongs, "FOOTER SONGS")
   return (
     <>
       <div className="now-playing-container">
         <div className="now-playing-bar">
           <div className="now-playing-left">
-            <div className="content record-content">
-              <img
-                className="record-cover"
-                src={currentPlayingAlbum.artWork}
-                alt={currentPlayingAlbum.title}
-              />
-              <div className="record-info">
-                <h3 className="record-artist">{currentPlayingArtist.name}</h3>
-                <p className="record-title">{currentPlayingSong.title}</p>
+            <Link to={`/album/${currentPlayingAlbum.id}`}>
+              <div className="content record-content">
+                <img
+                  className="record-cover"
+                  src={currentPlayingAlbum.artWork}
+                  alt={currentPlayingAlbum.title}
+                />
+                <div className="record-info">
+                  <h3 className="record-artist">{currentPlayingArtist.name}</h3>
+                  <p className="record-title">{currentPlayingSong.title}</p>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
           <div className="now-playing-center">
             <div className="content player-controls">
@@ -33,10 +52,10 @@ const FooterBar = () => {
                   <i className="fas fa-backward"></i>
                 </button>
                 <button className="play play-icon">
-                  <i className="fas fa-play"></i>
+                  <i className={`fas fa-play ${playing ? 'activeClr' : ''}`}></i>
                 </button>
-                <button className="pause pause-icon">
-                  <i className="fas fa-pause"></i>
+                <button onClick={() =>  dispatch({ type: "STOP_TRACK" })}  className="pause pause-icon" >
+                  <i  className="fas fa-pause"></i>
                 </button>
                 <button className="next play-next">
                   <i className="fas fa-forward"></i>
